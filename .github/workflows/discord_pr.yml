@@ -1,9 +1,10 @@
 name: Discord PR
 
 on:
-  pull_request:
-    types:
-      - opened
+  # pull_request:
+  #   types:
+  #     - opened
+  push:
     branches:
       - main
 
@@ -16,10 +17,4 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       uses: Ilshidur/action-discord@master
       with:
-          args: '@reviewer please review
-
-⤴️ Pull request: https://github.com/repo/pull/01
-🔨 Project: My Project
-❓ Purpose: Added feature
-⌚ Time: 5 min
-🚨 Urgency: Medium'
+          args: '@here please review\n\n⤴️ Pull request: https://github.com/repo/pull/01\n🔨 Project: My Project\n❓ Purpose: Added feature\n⌚ Time: 5 min\n🚨 Urgency: Medium'
