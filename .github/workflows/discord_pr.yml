@@ -1,0 +1,25 @@
+name: Discord PR
+
+on:
+  pull_request:
+    types:
+      - opened
+    branches:
+      - main
+
+jobs:
+  discord:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord PR Notification
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      uses: Ilshidur/action-discord@master
+      with:
+          args: '@reviewer please review
+
+⤴️ Pull request: https://github.com/repo/pull/01
+🔨 Project: My Project
+❓ Purpose: Added feature
+⌚ Time: 5 min
+🚨 Urgency: Medium'
