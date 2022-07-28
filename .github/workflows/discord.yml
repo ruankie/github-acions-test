@@ -18,7 +18,7 @@ jobs:
         # MESSAGE_STR: '[{"title": "New Push", "description": "<@592085882572505088> \n a new push has been made \n This is an emoji :grinning: \n {{ EVENT_PAYLOAD.repository.full_name }}"}]'
         # MESSAGE_STR: '[{"title": "Hello!", "description": "Hi! :grinning:"}]'
         # MESSAGE_STR: 'some message'
-        DISCORD_EMBEDS: ${{ fromJSON(github) }}
+        DISCORD_EMBEDS: ${{ toJSON(steps) }}
       uses: Ilshidur/action-discord@master
       # with:
       #   args: ${{ fromJSON(env) }}
