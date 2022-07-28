@@ -19,7 +19,7 @@ jobs:
 
           🔗 Push: {{ EVENT_PAYLOAD.head_commit.url }}
           🔨 Project: {{ EVENT_PAYLOAD.repository.full_name }}
-          ✍️ Author: {{ head_commit.author.username }}
+          ✍️ Author: {{ EVENT_PAYLOAD.head_commit.committer.username }}
 
 
           
