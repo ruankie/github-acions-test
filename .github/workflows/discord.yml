@@ -9,23 +9,17 @@ jobs:
   discord:
     runs-on: ubuntu-latest
     steps:
-    - name: Discord PR Notification
+    - name: Discord Push Notification
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        # MESSAGE_STR: '[{"title": "New Push", "description": "<@592085882572505088> \n a new push has been made \n This is an emoji :grinning: \n {{ EVENT_PAYLOAD.repository.full_name }}"}]'
-        # MESSAGE_STR: '[{"title": "Hello!", "description": "Hi! :grinning:"}]'
-        # MESSAGE_STR: 'some message'
-        # DISCORD_EMBEDS: ${{ toJSON(with.my_val) }}
       uses: Ilshidur/action-discord@master
       with:
         args: |
-          <@592085882572505088> please review
+          New Push!
 
-          ⤴️ Pull request: https://github.com/user/repo/pull/109
-          🔨 Project: Project X
-          ❓ Purpose: Added feature
-          ⌚ Time: 5 min
-          🚨 Urgency: Medium
+          🔗 Push: {{ EVENT_PAYLOAD.head_commit.url }}
+          🔨 Project: {{ EVENT_PAYLOAD.repository.full_name }}
+          ✍️ Author: {{ head_commit.author.username }}
 
 
           
