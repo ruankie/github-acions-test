@@ -13,9 +13,10 @@ jobs:
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         MESSAGE_STR: '<@592085882572505088> \n a new push has been made \n This is an emoji :grinning: \n {{ EVENT_PAYLOAD.repository.full_name }}'
+        DISCORD_EMBEDS: '[{"title": "New Push", "description": {{ env.MESSAGE_STR }} }]'
       uses: Ilshidur/action-discord@master
       with:
-        args: ${{ env.MESSAGE_STR }}
+        args: 'some args'
 
 
           
