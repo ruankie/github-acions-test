@@ -14,4 +14,4 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
       uses: Ilshidur/action-discord@master
       with:
-        args: '@ruankie New push to {{ EVENT_PAYLOAD.repository.name }} by {{ EVENT_PAYLOAD.head_commit.committer.name }} {{ EVENT_PAYLOAD.repository.url }}'
+        args: '@ruankie#4780 New push to {{ EVENT_PAYLOAD.repository.name }} by {{ EVENT_PAYLOAD.head_commit.committer.name }} {{ EVENT_PAYLOAD.repository.url }}'
