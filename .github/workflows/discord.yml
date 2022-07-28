@@ -12,5 +12,5 @@ jobs:
     - name: Discord notification
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        DISCORD_EMBEDS: '[{"title": "Push", "description": "@ruankie a new push has been made\nThis is an emoji :grinning:"}]'
+        DISCORD_EMBEDS: '[{"title": "Push", "description": "<@592085882572505088> a new push has been made\nThis is an emoji :grinning:"}]'
       uses: Ilshidur/action-discord@master
