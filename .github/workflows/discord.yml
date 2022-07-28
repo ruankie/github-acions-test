@@ -9,10 +9,7 @@ jobs:
   discord:
     runs-on: ubuntu-latest
     steps:
-    - name: Notify start
-      run: echo "starting..."
-
-    - name: Discord notification
+    - name: Discord PR Notification
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         # MESSAGE_STR: '[{"title": "New Push", "description": "<@592085882572505088> \n a new push has been made \n This is an emoji :grinning: \n {{ EVENT_PAYLOAD.repository.full_name }}"}]'
@@ -22,9 +19,13 @@ jobs:
       uses: Ilshidur/action-discord@master
       with:
         args: |
-          this is my
-          multi-line 
-          message
+          <@592085882572505088> please review
+
+          ⤴️ Pull request: https://github.com/user/repo/pull/109
+          🔨 Project: Project X
+          ❓ Purpose: Added feature
+          ⌚ Time: 5 min
+          🚨 Urgency: Medium
 
 
           
