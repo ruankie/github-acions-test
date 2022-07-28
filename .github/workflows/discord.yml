@@ -14,6 +14,6 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         #MESSAGE_STR: '[{"title": "New Push", "description": "<@592085882572505088> \n a new push has been made\nThis is an emoji :grinning: The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed."}]'
         MESSAGE_STR: '[{"title": "Hello!", "description": "Hi! :grinning:"}]'
-        DISCORD_EMBEDS: ${{ env.MESSAGE_STR }}
+        DISCORD_EMBEDS: '[{"title": "Hello!", "description": "Hi! :grinning:"}]'
       uses: Ilshidur/action-discord@master
           
