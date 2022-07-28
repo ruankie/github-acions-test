@@ -23,7 +23,7 @@ jobs:
         # DISCORD_EMBEDS: ${MESSAGE_STR}
       uses: Ilshidur/action-discord@master
       with:
-        args: 'some args'
+        args: ${MY_VAR}
 
 
           
