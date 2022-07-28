@@ -6,6 +6,7 @@ on:
       - opened
       - edited
       - review_requested
+      - reopened
 
 jobs:
   discord:
