@@ -12,7 +12,17 @@ jobs:
     - name: Discord notification
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        DISCORD_EMBEDS: ${{ toJson(my_value) }}
+        DISCORD_EMBEDS: '{
+                          "content": null,
+                          "embeds": [
+                            {
+                              "title": "New Push",
+                              "description": "a new push has been made",
+                              "color": null
+                            }
+                          ],
+                          "attachments": []
+                        }'
       uses: Ilshidur/action-discord@master
       with:
         args: 'args content'
