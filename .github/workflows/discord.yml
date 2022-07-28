@@ -16,8 +16,6 @@ jobs:
         MESSAGE_STR: '[{"title": "Hello!", "description": "Hi! :grinning:"}]'
         DISCORD_EMBEDS: ${{ env.MESSAGE_STR }}
       uses: Ilshidur/action-discord@master
-      with:
-        args: 'some args'
 
 
           
