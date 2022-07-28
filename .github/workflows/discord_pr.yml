@@ -1,0 +1,27 @@
+name: Discord PR
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  discord:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Discord PR Notification
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        DISCORD_USERNAME: ${{ EVENT_PAYLOAD.pull_request.user.login }}
+        DISCORD_AVATAR: ${{ EVENT_PAYLOAD.pull_request.user.avatar_url }}
+      uses: Ilshidur/action-discord@master
+      with:
+          args: |
+            @here please review
+            Reviewers: {{ EVENT_PAYLOAD.pull_request.requested_reviewers }}
+            
+            ⤴️ Pull request ({{ EVENT_PAYLOAD.number }}): {{ EVENT_PAYLOAD.pull_request.html_url }}
+            🔨 Project: {{ EVENT_PAYLOAD.pull_request.head.repo.full_name }}
+            ❓ Purpose: {{ EVENT_PAYLOAD.pull_request.title }}
+            ⌚ Time: 5 min
+            🚨 Urgency: Medium'
