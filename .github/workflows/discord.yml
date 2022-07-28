@@ -14,5 +14,3 @@ jobs:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         DISCORD_EMBEDS: '[{"title": "Hello!", "description": "Hi! :grinning:"}]'
       uses: Ilshidur/action-discord@master
-      with:
-        args: 'args content'
