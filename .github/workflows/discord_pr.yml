@@ -42,10 +42,10 @@ jobs:
         username: "GitHub PR Bot"
         message: |
           @here please review
-          Reviewers: {{ env.EVENT_PAYLOAD.pull_request.requested_reviewers }}
+          Reviewers: ${{ env.EVENT_PAYLOAD.pull_request.requested_reviewers }}
           
-          ⤴️ Pull request #{{ env.EVENT_PAYLOAD.number }}: {{ env.EVENT_PAYLOAD.pull_request.html_url }}
-          🔨 Project: {{ env.EVENT_PAYLOAD.pull_request.head.repo.full_name }}
-          ❓ Purpose: {{ env.EVENT_PAYLOAD.pull_request.title }}
+          ⤴️ Pull request #${{ env.EVENT_PAYLOAD.number }}: ${{ env.EVENT_PAYLOAD.pull_request.html_url }}
+          🔨 Project: ${{ env.EVENT_PAYLOAD.pull_request.head.repo.full_name }}
+          ❓ Purpose: ${{ env.EVENT_PAYLOAD.pull_request.title }}
           ⌚ Time: ? min
           🚨 Urgency: ?
