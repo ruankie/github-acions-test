@@ -23,5 +23,5 @@ jobs:
             ⤴️ Pull request ({{ EVENT_PAYLOAD.number }}): {{ EVENT_PAYLOAD.pull_request.html_url }}
             🔨 Project: {{ EVENT_PAYLOAD.pull_request.head.repo.full_name }}
             ❓ Purpose: {{ EVENT_PAYLOAD.pull_request.title }}
-            ⌚ Time: 5 min
-            🚨 Urgency: Medium'
+            ⌚ Time: ?
+            🚨 Urgency: ?
