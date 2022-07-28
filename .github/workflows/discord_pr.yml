@@ -11,22 +11,31 @@ on:
 jobs:
   discord:
     runs-on: ubuntu-latest
+    # steps:
+    # - name: Discord PR Notification
+    #   env:
+    #     DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+    #     # DISCORD_USERNAME: ${{ env.EVENT_PAYLOAD.pull_request.user.login }}
+    #     # DISCORD_AVATAR: ${{ env.EVENT_PAYLOAD.pull_request.user.avatar_url }}
+    #     # DISCORD_EMBEDS: '[{"title":" ","description":" "}]'
+    #   uses: Ilshidur/action-discord@master
+    #   with:
+    #       args: |
+    #         @here please review
+    #         Reviewers: {{ EVENT_PAYLOAD.pull_request.requested_reviewers }}
+    #         Echo msg: {{ echo hello }}
+            
+    #         ⤴️ Pull request #{{ EVENT_PAYLOAD.number }}: {{ EVENT_PAYLOAD.pull_request.html_url }}
+    #         🔨 Project: {{ EVENT_PAYLOAD.pull_request.head.repo.full_name }}
+    #         ❓ Purpose: {{ EVENT_PAYLOAD.pull_request.title }}
+    #         ⌚ Time: ? min
+    #         🚨 Urgency: ?
     steps:
     - name: Discord PR Notification
-      env:
-        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        # DISCORD_USERNAME: ${{ env.EVENT_PAYLOAD.pull_request.user.login }}
-        # DISCORD_AVATAR: ${{ env.EVENT_PAYLOAD.pull_request.user.avatar_url }}
-        # DISCORD_EMBEDS: '[{"title":" ","description":" "}]'
-      uses: Ilshidur/action-discord@master
+      uses: appleboy/discord-action@master
       with:
-          args: |
-            @here please review
-            Reviewers: {{ EVENT_PAYLOAD.pull_request.requested_reviewers }}
-            Echo msg: {{ echo hello }}
-            
-            ⤴️ Pull request #{{ EVENT_PAYLOAD.number }}: {{ EVENT_PAYLOAD.pull_request.html_url }}
-            🔨 Project: {{ EVENT_PAYLOAD.pull_request.head.repo.full_name }}
-            ❓ Purpose: {{ EVENT_PAYLOAD.pull_request.title }}
-            ⌚ Time: ? min
-            🚨 Urgency: ?
+        webhook_id: ${{ secrets.WEBHOOK_ID }}
+        webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+        color: "#48f442"
+        username: "GitHub PR Bot"
+        message: "A new commit has been pushed with custom color."
